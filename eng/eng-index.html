@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+	
+	<head>
+		<title>BRAIN GAMES | Homepage</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" type="image/png" href="https://www.kindpng.com/picc/m/106-1066848_brain-chip-in-a-brain-icon-hd-png.png">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	</head>
+	
+	<style>
+		.back {
+			background-position-x: center !important; 
+			background-position-y: center !important;
+			background-repeat: no-repeat !important;
+			background-size: cover !important;
+		}
+		
+		.decotitre{
+			background-color: rgba(37,211,80,0.45) !important;
+			box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, .45);
+			padding: 5px;
+		}
+		
+		.lime{color: #25d350 !important;}
+		.limelink a{color: #25d350 !important;}
+		.maxpix{max-height: 400px !important;}
+		.menu{color: #000 !important;}
+		.menu:hover{color: #25d350 !important; font-weight:600;}
+		.noir{color: #000;} .noir:hover{color: #000;}
+		.nwar{background-color: #000 !important;}
+		.renforce {text-shadow: 3px 3px 3px #000;}
+		
+		.reflection {
+			color: #FFF;
+			border: 4px solid #000; 
+			background-color: #000;
+			overflow: hidden;
+			position: relative;
+		}
+		
+		.reflection:hover {
+			border: 4px solid #000;
+			background-color: #FFF;
+		}
+  
+		.reflection:after {
+			background: #FFF;
+			border: 0px solid #000;
+			content: "";
+			height: 155px;
+			left: -75px;
+			opacity: .8;
+			position: absolute;
+			top: -50px;
+			-webkit-transform: rotate(35deg);
+			transform: rotate(35deg);
+			transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+		}
+		
+		.reflection:hover:after {
+			background: #FFF;
+			border: 20px solid #000;
+			opacity: 0;
+			left: 120%;
+			-webkit-transform: rotate(40deg);
+			transform: rotate(40deg);
+		}
+	</style>
+	
+	<body class="m-0 p-0">
+				
+		<nav class="fixed-top bg-white navbar navbar-expand-lg">	
+			<a href="eng-index.html" class="btn reflection text-uppercase" style="border-radius: 0px !important;">Brain Games</a>
+	   
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon fa fa-navicon text-dark"></span>
+			</button>
+
+			<div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto mx-auto text-center">
+					<li class="font-weight-bold nav-item">
+						<a class="nav-link noir" href="#">Homepage</a>
+					</li>	
+					
+					<li class="nav-item">
+						<a class="menu nav-link" href="eng/eng-gererJeux.html">The platform</a>
+					</li>
+					
+					<!-- <li class="nav-item">
+						<a class="menu nav-link" href="gererpotager.html">Gérer</a>
+					</li> -->
+					
+					<li class="nav-item dropdown">
+						<a class="menu nav-link" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"><span class="nav-label">Langues ▼</span></a>
+						<ul class="dropdown-menu">
+							<li>
+								<a class="menu nav-link" href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Flag_of_Great_Britain_%281707%E2%80%931800%29.svg" height="30px" width="30px"/></td class="align-middle"> Anglais</a>
+							</li>
+							<li>
+								<a class="menu font-weight-bold nav-link" href="index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg" height="20px" width="30px"/></td class="align-middle"> Français</a>
+							<li>
+						</ul>
+					</li>
+				</ul>
+		
+				<form class="form-inline my-2 my-lg-0 text-center">
+					<input id="achercher" class="form-control mr-sm-2" placeholder="Learn about something" aria-label="Search" type="search">
+				</form>
+				<input class="btn mx-1 my-2 reflection" onClick="rechercher()" value="Search" type="button" >
+			</div>
+		</nav>
+		
+		<div id="monCarousel" style="height: 100vh;" class="carousel slide" data-ride="carousel">
+			<ol class="carousel-indicators">
+				<li data-target="#monCarousel" data-slide-to="0" class="nwar active"></li>
+				<li data-target="#monCarousel" data-slide-to="1" class="nwar"></li>
+				<li data-target="#monCarousel" data-slide-to="2" class="nwar"></li>
+			</ol>
+ 
+			<div class="carousel-inner h-100 w-100">
+				<div class="active back carousel-item h-100 renforce" style="background: url('https://apprendre-la-programmation.net/wp-content/uploads/2020/02/choisir-entreprise-pour-faire-sa-carrie%CC%80re-de-de%CC%81veloppeur.jpg');" alt="Bienvenue">
+					<div class="carousel-caption d-sm-block">
+						<h2>YOUR PASSION, OUR GOAL</h2><br>
+						<h4>WELCOME TO BRAIN GAMES</h4><br>
+						<p>YOUR gaming platform </p>
+					</div>
+				</div>
+				
+				<div class="back carousel-item h-100" style="background: url('https://www.superprof.fr/blog/wp-content/uploads/2017/08/seniors-generation-Y-1060x707.jpg');" >
+					<div class="carousel-caption d-sm-block">
+						<h2 class="renforce">OUR FIGHT: Memory problems</h2><br>
+						<h4 class="renforce">Each year there are 250,000 new cases of Alzheimer's disease <br> and hundreds of thousands of people with other minor memory disorders.</h4><br>
+						<a class="btn nav-link mx-auto reflection" href="https://alzheimer-recherche.org/la-maladie-alzheimer/quest-maladie-dalzheimer/definition-et-chiffres/" target="_blank">Find out more.</a>
+					</div>
+				</div>
+				
+				<div class="back carousel-item h-100" style="background: url('https://game-guide.fr/wp-content/uploads/2019/12/Personnes-a%CC%82ge%CC%81es-jouant-aux-jeux-video.jpg');" alt="Gérer mon potager">
+					<div class="carousel-caption d-sm-block">
+						<h2 class="renforce">We believe that games are the way to solve the problem!</h2><br>
+						<h4 class="renforce">You too ? Are you a developer? Want to share your games?</h4><br>
+						<a class="btn nav-link mx-auto reflection" href="gererJeux.html">Add your game NOW!!!</a>
+					</div>
+				</div>
+			</div>
+			
+			<a class="carousel-control-prev" href="#monCarousel" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon nwar" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			
+			<a class="carousel-control-next" href="#monCarousel" role="button" data-slide="next">
+				<span class="carousel-control-next-icon nwar" aria-hidden="true"></span>
+				<span class="sr-only nwar">Next</span>
+			</a>
+		</div>
+		
+		<section id="lalerte" class="container-fluid text-center" style="display: none; position: fixed !important; top: 50vh; z-index:  100000!important; ">
+			<div class="alert alert-danger mx-auto text-center w-50" role="alert">
+				Please type what you would like to search for<br><strong>Example: </strong>Dragon Fruit.
+			</div>
+		</section>
+		
+		<script> $('.carousel').carousel({interval: 4000})</script>
+		
+		<section class="container my-5 py-3 text-center" style="background-color: rgba(0,0,0,0.05);"> 
+			<h1 class="decotitre"><i class="renforce text-white">THE OBJECTIVE OF THE PLATFORM</i></h1>
+			<p>MEMO Corporation © opens its gaming platform !!! Are you a developer? Do you like games? <br>
+				Want to help us improve the memory of our customers? You are in the right place.<a href="gererJeux.html">I want to add my games.</a> </p>
+				<h1 class="decotitre"><i class="renforce text-white">THE TEAM</i></h1>
+			<div class="row">
+				<div class="col-sm-4"> 
+					<img class="img-fluid maxpix" src="https://vignette.wikia.nocookie.net/marvelstudios/images/9/97/Tony-Stark.jpg/revision/latest?cb=20171203203216&path-prefix=fr" alt="Ali"> 
+					<div class="content">
+						<h2>Yassine STARK</h2>
+						<span><p class="decotitre"><b>Nicknamed "The boss".</b><br>Head of several multinationals, his favorite pastime? Tease his friends.</p></span>
+					</div>
+				</div>
+				 
+				<div class="col-sm-4"> 
+					<img class="img-fluid maxpix" src="https://static.posters.cz/image/750/affiches/moi-moche-et-mechant-many-minions-i23817.jpg" alt="Gavro">		 
+					<div class="content text-center">
+						<h2>Minions</h2>
+						<span><p class="decotitre"><b>Beings ...</b><br>Strong point: Do not claim revenue ...<br> well...doesn't claim anything at all.</p></span>
+					</div>
+				</div>
+				
+				<div class="col-sm-4"> 
+					<img class="img-fluid maxpix" src="https://file1.science-et-vie.com/var/scienceetvie/storage/images/8/5/85106/les-piliers-mythe-einstein.jpg?alias=exact1024x768_p" alt="Ikram">
+					<div class="content text-center">
+						<h2>ADAM STEIN</h2>
+						<span><p class="decotitre"><b>The thinking head.</b><br>Weak point: don't like being teased by stark.</p></span>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<footer class="font-small nwar page-footer pt-3">
+			<div class="mt-3 container-fluid text-center text-white">
+				<div class="row text-center">
+					<div class="col-md-6">
+						<h5 class="text-uppercase">Find us on our networks</h5>
+						<ul class="limelink list-unstyled">				
+							<li><a href="https://www.google.com/intl/fr/gmail/about/#" class="fa fa-envelope" target="_blank"> BrainGames@memoContact.com</a></li>
+							<li><a href="https://fr-fr.facebook.com" class="fa fa-facebook" target="_blank"> Brain games</a></li>
+							<li><a href="https://www.instagram.com" class="fa fa-instagram" target="_blank"> Brain_games</a></li>
+							<li><a href="https://twitter.com" class="fa fa-twitter" target="_blank"> @funBrainGames</a></li>
+						</ul>
+					</div>
+					
+					<div class="col-md-3 ">
+						<h5 class="text-uppercase">Options</h5>
+
+						<ul class="limelink list-unstyled">
+							<!-- <li>
+								<a href="choisirpotager.html">Choisir mon potager</a>
+							</li>
+							 -->
+							<li>
+								<a href="gererJeux.html">Access the platform</a>
+							</li>
+							<li>
+								<a href="https://www.who.int/fr" target="_blank">Our sponsor</a>
+							</li>
+							<li>
+								<a href="#">Go back to the top of the page</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<div class="footer-copyright py-3 text-center text-white">
+				BRAIN GAMES ©, 2020.<br> By YASSINE & ADAM.  
+			</div>
+		</footer>
+		
+		<script>
+			function rechercher(){
+				var motclef = document.getElementById('achercher').value;
+				
+				if(motclef != 0){
+					var adresse = 'https://en.wikipedia.org/wiki/';
+					var lien = adresse.concat(' ', motclef);
+					window.open(lien,'_blank');
+				}
+				else{
+					document.getElementById("lalerte").style.display = "block";
+					setTimeout(function(){document.getElementById("lalerte").style.display = "none";},3000);
+				}
+			}
+		</script>
+	
+	</body>
+</html>

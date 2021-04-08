@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+	<head>
+		<title>BRAIN GAMES | Plateform</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" type="image/png" href="https://www.kindpng.com/picc/m/106-1066848_brain-chip-in-a-brain-icon-hd-png.png">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	</head>
+	
+	<style>
+		.decotitre{
+			background-color: rgba(37,211,80,0.45) !important;
+			box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, .45); 
+		}
+
+		.table{
+			word-wrap: break-word;
+		}
+	
+		.lime{color: #25d350 !important;}
+		.limelink a{color: #25d350 !important;}
+		.maxpix{max-height: 400px !important;}
+		.menu{color: #000 !important;}
+		.menu:hover{color: #25d350 !important; font-weight:600;}
+		.noir{color: #000;} .noir:hover{color: #000;}
+		.nwar{background-color: #000 !important;}
+		.renforce {text-shadow: 3px 3px 3px #000;}
+		
+		.reflect {
+			color: #FFF;
+			background-color: #000;
+		}
+		
+		.reflect:hover {
+			border: 1px solid #000;
+			background-color: #FFF;
+		}
+		
+		.reflection {
+			color: #FFF;
+			border: 4px solid #000; 
+			background-color: #000;
+			overflow: hidden;
+			position: relative;
+		}
+		
+		.reflection:hover {
+			border: 4px solid #000;
+			background-color: #FFF;
+		}
+  
+		.reflection:after {
+			background: #FFF;
+			border: 0px solid #000;
+			content: "";
+			height: 155px;
+			left: -75px;
+			opacity: .8;
+			position: absolute;
+			top: -50px;
+			-webkit-transform: rotate(35deg);
+			transform: rotate(35deg);
+			transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+		}
+		
+		.reflection:hover:after {
+			background: #FFF;
+			border: 20px solid #000;
+			opacity: 0;
+			left: 120%;
+			-webkit-transform: rotate(40deg);
+			transform: rotate(40deg);
+		}
+
+		.infobulle1,.infobulle2,.infobulle3{
+			position: relative;
+		}
+
+		.infobulle3:hover::after{
+			content: attr(aria-label);
+			position: absolute;
+			bottom:0px;
+			right:-0.4em;
+			transform: translateX(100%);
+			background-color: grey;
+			padding-left: 0.5em;
+			padding-right: 0.5em;
+			color: white;
+			border-radius: 4px;
+			font-size: 1.2rem;
+			z-index: 1;
+		}
+		.infobulle3:hover::before{
+  			content: "◄";
+  			position: absolute;
+			right: -0.6em;
+			bottom:0%;
+			font-size: 1.2em;
+  			color: grey;
+		}
+	</style>
+	
+	<body class="m-0 p-0">
+				
+		<nav class="fixed-top bg-white navbar navbar-expand-lg">	
+			<a href="index.html" class="btn reflection text-uppercase" style="border-radius: 0px !important;">Brain Games</a>
+	   
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon fa fa-navicon text-dark"></span>
+			</button>
+
+			<div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto mx-auto text-center">
+					<li class="font-weight-bold nav-item">
+						<a class="nav-link noir" href="eng/eng-index.html">Homepage</a>
+					</li>	
+					
+					<li class="nav-item">
+						<a class="menu nav-link" href="eng/eng-gererJeux.html">The platform</a>
+					</li>
+					
+					<!-- <li class="nav-item">
+						<a class="menu nav-link" href="gererpotager.html">Gérer</a>
+					</li> -->
+					
+					<li class="nav-item dropdown">
+						<a class="menu nav-link" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"><span class="nav-label">Langues ▼</span></a>
+						<ul class="dropdown-menu">
+							<li>
+								<a class="menu nav-link" href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Flag_of_Great_Britain_%281707%E2%80%931800%29.svg" height="30px" width="30px"/></td class="align-middle"> Anglais</a>
+							</li>
+							<li>
+								<a class="menu font-weight-bold nav-link" href="../gererJeux.html"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg" height="20px" width="30px"/></td class="align-middle"> Français</a>
+							<li>
+						</ul>
+					</li>
+				</ul>
+		
+				<form class="form-inline my-2 my-lg-0 text-center">
+					<input id="achercher" class="form-control mr-sm-2" placeholder="Learn about something" aria-label="Search" type="search">
+				</form>
+				<input class="btn mx-1 my-2 reflection" onClick="rechercher()" value="Search" type="button" >
+			</div>
+		</nav>
+		
+		<section id="lalerte" class="container-fluid text-center" style="display: none; position: fixed !important; top: 50vh; z-index:  100000!important;">
+			<div class="alert alert-danger mx-auto text-center w-50" role="alert">
+				Type what you wish to search.<br>
+				<strong>Example: </strong>Bycicle.
+			</div>
+		</section>
+		
+		<section id="lalerte2" class="container-fluid text-center" style="display: none; position: fixed !important; top: 50vh; z-index:  100000!important;">
+			<div class="alert alert-danger mx-auto text-center w-50" role="alert">
+				Please fill all fields of the form.<br>
+			</div>
+		</section>
+		
+		<section id="lalerte3" class="container-fluid text-center" style="display: none; position: fixed !important; top: 50vh; z-index:  100000!important;">
+			<div class="alert alert-success mx-auto text-center w-50" role="alert">
+				The game has been added to the table.<br>
+			</div>
+		</section>
+		
+		<section id="lalertesuccess" class="container-fluid text-center" style="display: none; position: fixed !important; top: 50vh; z-index:  100000!important;">
+			<div id="lars" class="alert alert-success mx-auto text-center w-50" role="alert">
+			</div>
+		</section>
+		
+		<section id="lalertefail" class="container-fluid text-center" style="display: none; position: fixed !important; top: 50vh; z-index:  100000!important;">
+			<div id ="larf" class="alert alert-danger mx-auto text-center w-50" role="alert">
+			</div>
+		</section>
+		
+		<div style="height: 15vh;"></div>
+		<div class="container lamap mb-5 py-3 text-center">
+			<p id="jeuxbut"  class="btn col-sm-3 mb-1 text-white infobulle3" style="height: 50px; background-color: dodgerblue;" value="GAMES" aria-label="To add a game, fill in all the fields below." >GAMES
+
+				<div id="jeux" class="table-responsive text-center mt-5">
+					<table  id="tabjeux" class="table table-bordered table-striped table-sm" style="word-wrap: break-word;">
+						<thead class="thead-dark">
+							<tr>
+								<th scope="col" class="align-middle">Application name</th>
+								<th scope="col" class="align-middle">Type of activity</th>
+								<th scope="col" class="align-middle">Description</th>
+								<th scope="col" class="align-middle">Target audience</th>
+								<th scope="col" class="align-middle">Duration of the activity</th>
+								<th scope="col" class="align-middle">Difficulty</th>
+								<th scope="col" class="align-middle">Creation date</th>
+								<th scope="col" class="align-middle">Author</th>
+							</tr>
+						</thead>
+									
+						<tbody>					  
+							<tr id="1">
+								<td class="align-middle">Memory card</td> 
+								<td class="align-middle">Playful</td>
+								<td class="align-middle">Find the pairs of cards among a pile of mixed cards.</td>
+								<td class="align-middle">Young audience</td>
+								<td class="align-middle">10min</td>
+								<td class="align-middle">easy</td>
+								<td class="align-middle">25-6-2013</td>
+								<td class="align-middle">Adamthebest@hotmail.com</td>
+								
+							</tr>
+											
+							<tr id="1">
+								<td class="align-middle">Memory'Cooking</td> 
+								<td class="align-middle">Playful</td>
+								<td class="align-middle">Memorize a cooking recipe and reproduce it in a limited time</td>
+								<td class="align-middle">For all</td>
+								<td class="align-middle">15min</td>
+								<td class="align-middle">medium</td>
+								<td class="align-middle">13-11-2017</td>
+								<td class="align-middle">jeanlouisDev@gmail.com</td>
+								
+							</tr>						
+						</tbody>
+					</table>
+				</div>
+			
+				<p id="ajouterbut" type="button" class="btn col-sm-3 mb-1 text-white infobulle3" style="height: 50px; background-color: dodgerblue;" aria-label="You can delete your game by clicking on the red button.">ADD YOUR GAME HERE</p>
+			
+				<div id="ajouter">
+					<form  class="decotitre form-row mb-3 mx-auto py-3 text-center w-100">
+						<div class="col-sm-3">
+							<label class="w-100" for="letype">Type of game</label>     
+							<select class="form-control mx-auto" id="letype" name="localisation">
+								<option value="Ludique">Playful</option>
+								<option value="Apprantissage">Learning</option>
+								<option value="Reflexion">Reflection</option>
+							</select>
+						</div>
+						<div class="col-sm-3">
+								<label class="w-100" for="nomJeux">Game name:</label>
+								<input id="nomJeux" type="text" class="form-control" placeholder="Nom du jeu">
+							</div>
+						<div class="col-sm-3">
+							<label class="w-100" for="descJ">Description: </label>
+							<textarea id="descJ" type="text" class="form-control" placeholder="Description" cols="15" > </textarea>
+						</div>
+						<div class="col-sm-3">
+							<label class="w-100" for="publicCible">Target audience:</label>     
+							<select class="form-control mx-auto" id="publicCible" name="public">
+								<option value="Jeune">Young</option>
+								<option value="Adulte">Adult</option>
+								<option value="Tout Public">For all</option>
+							</select>
+						</div>
+						
+						<div class="col-sm-3">
+							<label class="w-100" for="dureeJ">Duration of the activity: </label>
+							<input id="dureeJ" type="text" class="form-control" placeholder="1h , 15min">
+						</div>
+	
+						<div class="col-sm-3">
+							<label class="w-100" for="Difficulte">Difficulty:</label>
+							<select class="form-control mx-auto" id="Difficulte" name="Difficulte">
+								<option value="Facile">Easy</option>
+								<option value="Moyen">Medium</option>
+								<option value="Difficile">Hard</option>
+							</select>
+						</div>
+	
+						<div class="col-sm-3">
+							<label class="w-100" for="DateC">Creation date:</label>
+							<input type="date" max="2019-12-30" min="2011-08-13" value="2020-04-01" name="the_date" id="DateC" required>
+						</div>
+	
+						<div class="col-sm-3">
+							<label class="w-100" for="email">Author (Enter an email)</label>
+							<input id="email" type="email" class="form-control" placeholder="email" required>
+						</div>
+						
+						<input id ="ajoutersub" type="button" class="btn col-sm-2 mt-3 mx-auto reflect text-white" style="height: 50px; background-color:#25d350" value="Ajouter" onClick="ajouter()">
+					
+					</form>
+				</div>
+			
+		</div>
+		
+		<footer class="font-small nwar page-footer pt-3">
+			<div class="mt-3 container-fluid text-center text-white">
+				<div class="row text-center">
+					<div class="col-md-6">
+						<h5 class="text-uppercase">Find us on our networks</h5>
+						<ul class="limelink list-unstyled">				
+							<li><a href="https://www.google.com/intl/fr/gmail/about/#" class="fa fa-envelope" target="_blank"> BrainGames@memoContact.com</a></li>
+							<li><a href="https://fr-fr.facebook.com" class="fa fa-facebook" target="_blank"> Brain games</a></li>
+							<li><a href="https://www.instagram.com" class="fa fa-instagram" target="_blank"> Brain_games</a></li>
+							<li><a href="https://twitter.com" class="fa fa-twitter" target="_blank"> @funBrainGames</a></li>
+						</ul>
+					</div>
+					
+					<div class="col-md-3 ">
+						<h5 class="text-uppercase">Options</h5>
+
+						<ul class="limelink list-unstyled">
+							<!-- <li>
+								<a href="choisirpotager.html">Choisir mon potager</a>
+							</li>
+							 -->
+							<li>
+								<a href="gererJeux.html">Access the platform</a>
+							</li>
+							<li>
+								<a href="https://www.who.int/fr" target="_blank">Our sponsor</a>
+							</li>
+							<li>
+								<a href="#">Go back to the top of the page</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<div class="footer-copyright py-3 text-center text-white">
+				BRAIN GAMES ©, 2020.<br> By YASSINE & ADAM.  
+			</div>
+		</footer>
+		
+		<script>
+		
+			function rechercher(){
+				var motclef = document.getElementById('achercher').value;
+				if(motclef != 0){
+					var adresse = 'https://fr.wikipedia.org/wiki/';
+					var lien = adresse.concat(' ', motclef);
+					window.open(lien,'_blank');
+				}
+				else{
+					document.getElementById("lalerte").style.display = "block";
+					setTimeout(function(){document.getElementById("lalerte").style.display = "none";},3000);
+				}
+			}	
+			
+			function ajouter() {
+
+				var nomJ = document.getElementById("nomJeux").value;
+				var typeJ = document.getElementById("letype").value;
+				var descJ = document.getElementById("descJ").value;
+				var publicJ = document.getElementById("publicCible").value;
+				var dureeJ = document.getElementById("dureeJ").value;
+				var diffJ = document.getElementById("Difficulte").value;
+				var emailJ = document.getElementById("email").value;
+ 
+			 	var d = new Date(document.getElementById("DateC").value);
+				var creatJ = d.getDate()+'-'+(d.getMonth()+1)+'-'+d.getFullYear();
+				 
+				var table = document.getElementById("tabjeux"); 
+				var success = document.getElementById("lalertesuccess");
+				var successcontent = document.getElementById("lars");
+				var fail = document.getElementById("lalertefail");
+				var failcontent = document.getElementById("larf");
+				var numrow = document.getElementById("tabjeux").rows.length; 
+
+				for (var r = 1; r < numrow; r++){
+						if(nomJ.innerHTML == document.getElementById("tabjeux").rows[r].cells[0].innerHTML){
+							failcontent.innerHTML = "This game already exists !";
+							fail.style.display = "block";
+							setTimeout(function(){fail.style.display = "none";},3000);
+							return;
+						}
+				}
+			  
+				if( nomJ != 0 && typeJ != 0 && descJ !=0 && publicJ != 0 && dureeJ !=0 && diffJ !=0 && emailJ != 0){
+					var derniereligne = table.rows.length;	
+					var row = table.insertRow(derniereligne);
+
+					var bouton = document.createElement('button');
+					bouton.textContent = 'X';
+					bouton.onclick = function(){supprimer(row)}
+					bouton.style.backgroundColor = "red";
+
+					var cell0 = row.insertCell(0);
+					var cell1 = row.insertCell(1);
+					var cell2 = row.insertCell(2);
+					var cell3 = row.insertCell(3);
+					var cell4 = row.insertCell(4);
+					var cell5 = row.insertCell(5);
+					var cell6 = row.insertCell(6);
+					var cell7 = row.insertCell(7);
+					var cell8 = row.insertCell(8);
+
+					cell0.innerHTML = nomJ.charAt(0).toUpperCase() + nomJ.slice(1).toLowerCase(); $(cell0).addClass("align-middle");
+					cell1.innerHTML = typeJ;$(cell1).addClass("align-middle");
+					cell2.innerHTML = descJ.charAt(0).toUpperCase() + descJ.slice(1).toLowerCase(); $(cell2).addClass("align-middle");
+					cell3.innerHTML = publicJ; $(cell3).addClass("align-middle");
+					cell4.innerHTML = dureeJ; $(cell4).addClass("align-middle");
+					cell5.innerHTML = diffJ; $(cell5).addClass("align-middle");
+					cell6.innerHTML = creatJ; $(cell6).addClass("align-middle");
+					cell7.innerHTML = emailJ; $(cell7).addClass("align-middle"); 
+					cell8.appendChild(bouton);$(cell8).addClass("align-middle");
+					
+					document.getElementById("lalerte3").style.display = "block";
+					setTimeout(function(){document.getElementById("lalerte3").style.display = "none";},2000);
+				}
+				else{
+					document.getElementById("lalerte2").style.display = "block";
+					setTimeout(function(){document.getElementById("lalerte2").style.display = "none";},3000);
+				}
+			}
+			
+			function supprimer(ligne){
+				var compteuroccurence = 0;
+				var success = document.getElementById("lalertesuccess");
+				var successcontent = document.getElementById("lars");
+				var fail = document.getElementById("lalertefail");
+				var failcontent = document.getElementById("larf");
+				
+				var nomj = document.getElementById('tabjeux').rows[ligne.rowIndex].cells[0].innerHTML;
+				
+				if(confirm( "You are about to delete this game: "+nomj+" !!")){
+					document.getElementById('tabjeux').deleteRow(ligne.rowIndex);
+				}else{
+					
+				}					
+			}
+		</script>
+	
+	</body>
+</html>
